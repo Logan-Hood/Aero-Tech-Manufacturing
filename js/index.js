@@ -15,3 +15,18 @@ $(document).ready(function () {
         $(this).next(".dropdown-mobile").slideToggle(); // Toggle dropdown
     });
 });
+
+
+
+
+$(document).ready(function () {
+    // Get current page filename (e.g., "index.html")
+    let currentPage = window.location.pathname.split("/").pop();
+
+    // Loop through nav links to find the matching href
+    $(".nav-link").each(function () {
+        if ($(this).attr("href") === currentPage) {
+            $(this).addClass("active-page");
+        }
+    });
+});
