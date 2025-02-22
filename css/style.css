@@ -485,11 +485,6 @@ footer {
     margin-top: 40px;
 }
 
-/* Default: Show carousel on large screens */
-.services {
-    display: block;
-}
-
 /* Show accordion and hide carousel on smaller screens */
 @media screen and (max-width: 768px) {
     .mobile-accordion {
@@ -500,10 +495,7 @@ footer {
     }
 }
 
-
-
 /* Accordion Styles */
-
 .mobile-accordion section {
     display: flex;
     flex-direction: column;
@@ -517,16 +509,24 @@ footer {
     flex-direction: column;
 }
 
+/* Default header style */
 .accordion-header {
-    background-color: #4C8999;
+    background-color: gray;
     color: white;
     padding: 23px 27.5px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    }
+    transition: background-color 0.3s ease;
+}
 
+/* Active header style */
+.accordion-item.active .accordion-header {
+    background-color: #4C8999; /* Active header color */
+}
+
+/* Default: Hide content */
 .accordion-content {
     display: none;
     background-color: white;
@@ -534,13 +534,15 @@ footer {
     text-align: center;
 }
 
+/* Show content when active */
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Image adjustments */
 .accordion-content img {
     width: 80%;
     height: auto;
-}
-
-.accordion-item.active {
-    display: block;
 }
 
 
