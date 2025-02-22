@@ -337,8 +337,13 @@ footer {
         text-align: center;
     }
 
+    .footer-logo img {
+        width: 80%;
+    }
+
     .footer-logo {
         margin-bottom: 15px;
+
     }
 }
 
