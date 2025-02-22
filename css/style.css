@@ -28,7 +28,7 @@ header {
 
 .navbar img {
     max-height: 140px;
-    width: 70%;
+    width: 90%;
 }
 
 
@@ -117,7 +117,7 @@ header {
 }
 
 .mobile-header img {
-    height: 100px;
+    width: 50%;
 }
 
 .hamburger-menu {
