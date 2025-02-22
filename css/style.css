@@ -278,11 +278,13 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     margin: 32px;
 }
 
 .footer-logo img {
     max-height: 140px; /* Adjust logo size */
+    width: 90%;
     border: white solid;
     padding-right: 12px;
 }
@@ -332,14 +334,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-logo img {
-        width: 80%;
-    }
 
     .footer-logo {
         margin-bottom: 15px;
