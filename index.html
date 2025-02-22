@@ -236,11 +236,16 @@
                 <p> <strong>Fax:</strong> (801) 292-9908</p>
             </div>
             </section>
+            <p>&copy; <span id="year"></span> Aero Tech. All rights reserved.</p>
+            <p>Design created by Logan Hood.</p>
         </div>
     </footer>
     
 
-
+    <script>
+        // Automatically update the year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="js/index.js"></script>
