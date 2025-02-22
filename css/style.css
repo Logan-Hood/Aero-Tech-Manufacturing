@@ -28,7 +28,7 @@ header {
 
 .navbar img {
     max-height: 140px;
-    width: 80%;
+    width: 70%;
 }
 
 
@@ -131,7 +131,7 @@ header {
 }
 
 .hamburger-menu div {
-    width: 30px;
+    width: 35px;
     height: 5px;
     background-color: #4C8999;
     margin: 4px 0;
