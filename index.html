@@ -8,36 +8,73 @@
 </head>
 <body>
     <header>
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <!-- Hamburger Menu -->
+            <div id="hamburger-menu" class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Logo -->
+            <section><img src="images/logo.png" alt="Aero Tech Logo">
+            </div>
+
+        <!-- Desktop Navbar -->
         <nav>
-            <img src="images/logo.png" alt="Aero Tech Logo">
-            <div class="menu-toggle">&#9776;</div> <!-- Hamburger Menu Icon -->
-            <ul>
-                <div class="close-menu">&times;</div> <!-- Close Button for Mobile -->
+            <ul class="navbar">
+                <section>
+                    <img src="images/logo.png" alt="Aero Tech Logo">
+                </section>
+                <section>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#">Services ▼</a>
+                    <a>Services ▼</a>
                     <ul class="dropdown-menu">
                         <li><a href="precision.html">Precision Sheet Metal</a></li>
                         <li><a href="radiant.html">Radiant Ceiling Panels</a></li>
                         <li><a href="carpet.html">Carpet Cleaning Mounts</a></li>
                     </ul>
                 </li>
+                </section>
             </ul>
         </nav>
-    </header>
-    
 
+
+        
+<!-- Mobile Dropdown Menu -->
+<div id="mobile-menu" class="mobile-menu">
+    <!-- Close Button -->
+    <div id="close-menu" class="close-menu">X</div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a>Services ▼</a>
+                    <ul class="dropdown-mobile">
+                        <li><a href="precision.html">Precision Sheet Metal</a></li>
+                        <li><a href="radiant.html">Radiant Ceiling Panels</a></li>
+                        <li><a href="carpet.html">Carpet Cleaning Mounts</a></li>
+                    </ul>
+            <section>
+                <img src="images/logo.png" alt="Aero Tech Logo">
+            </section>
+        </div>
+
+
+
+
+    </header>
     <main>
         <section>
             <p>Welcome to Aero Tech Manufacturing.</p>
         </section>
     </main>
-
-
     <footer>
         <p>&copy; 2025 Aero Tech Manufacturing. All rights reserved.</p>
     </footer>
