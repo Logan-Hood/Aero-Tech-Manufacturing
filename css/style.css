@@ -11,7 +11,26 @@ header {
     padding: 10px 20px;
 }
 
+h1 {
+    font-family: 'Play', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4C8999;
+}
 
+h2 {
+    font-family: 'Play', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4C8999;
+}
+
+h3 {
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4C8999;
+}
 
 
 /* Desktop Navbar */
@@ -663,14 +682,26 @@ footer {
 
 .title {
     text-align: center;
+    background-color: #f5f5f5;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title p {
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+    width: 70%;
 }
 
 .capabilities {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
-    max-width: 50%;
+    gap: 32px;
+    max-width: 70%;
 }
 
 /* Flip Card Container */
@@ -681,6 +712,10 @@ footer {
     perspective: 1000px;
     border: #000000 solid;
 }
+
+
+
+
 
 /* Flip Card Inner Container */
 
@@ -741,7 +776,7 @@ footer {
 }
 
 .flip-card-back ul li {
-    font-size: 18px;
+    font-size: 16px;
     margin: 8px 0;
 }
 
@@ -750,10 +785,10 @@ footer {
 
 .quote-btn {
     display: inline-block;
-    margin-top: 15px;
+    margin: 40px;
     padding: 10px 60px;
-    background-color: white;
-    color: black;
+    background-color: #4C8999;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     border: #000000 solid;
@@ -772,21 +807,53 @@ footer {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 60%;
+    width: 100%;
+    background-color: #f5f5f5;
+
+
 }
+
+.equipment-section p {
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+    width: 70%;
+}
+
 
 .dropdown-group {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-group {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+
+}
+
+.equipment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .equipment {
     text-align: center;
     width: 320px;
-    background-color: #ffffff;
-    color: #FFFFFF;
+    background-color: #f5f5f5;
+    color: #ffffff;
     margin: 16px;
     cursor: pointer;
     padding: 10px;
@@ -808,7 +875,7 @@ footer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-    background-color: white;
+    background-color: #f5f5f5;
     color: #4C8999;
     text-align: left;
     font-size: 18px;
@@ -849,6 +916,8 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    background-color: #f5f5f5;
+    width: 100%;
 }
 
 .gallery-group {
@@ -856,7 +925,10 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    width: 100%;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-bottom: 32px;
+    padding-top: 32px;
 }
 
 .gallery-item {
