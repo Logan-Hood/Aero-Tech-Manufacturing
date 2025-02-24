@@ -477,9 +477,6 @@ footer {
 
 
 
-
-
-
 /* Default: Hide accordion on large screens */
 .mobile-accordion {
     display: none;
@@ -635,4 +632,372 @@ footer {
     .badge-container img {
         max-width: 250px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* precision.html  */
+
+.percision-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.capabilities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 50%;
+}
+
+/* Flip Card Container */
+.flip-card {
+    background-color: transparent;
+    width: 450px;
+    height: 310px;
+    perspective: 1000px;
+    border: #000000 solid;
+}
+
+/* Flip Card Inner Container */
+
+/* Default Flip Animation */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Flip on Hover (For Desktop) */
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Flip on Tap (For Mobile & Tablet) */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Front & Back of the Flip Card */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* Front Card - Video Side */
+.flip-card-front {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Back Card - Text Side */
+.flip-card-back {
+    background: #B8D4D9;
+    color: #000;
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-back ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flip-card-back ul li {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+
+/* Get a quote button */
+
+.quote-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 60px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: #000000 solid;
+    transition: background 0.3s;
+}
+
+.quote-btn:hover {
+    background-color: #B8D4D9;
+    border: #000000 solid;
+}
+
+
+
+.equipment-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+}
+
+.dropdown-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.equipment {
+    text-align: center;
+    width: 320px;
+    background-color: #ffffff;
+    color: #FFFFFF;
+    margin: 16px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.equipment-header {
+    font-weight: bold;
+}
+
+.equipment-header-inner {
+    background-color: #4C8999;
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+
+.equipment-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: white;
+    color: #4C8999;
+    text-align: left;
+    font-size: 18px;
+}
+
+
+
+
+
+.markets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.markets-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    gap: 64px
+}
+
+.market-item {
+    width: 250px;
+    height: 350px;
+}
+
+.market-item img {
+    height: 250px;
+}
+
+
+/* Gallery Layout */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.gallery-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.gallery-item {
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.overlay-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay img {
+    width: 750px;
+    height: 550px;
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation Buttons */
+.prev-btn, .next-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s ease;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .overlay img {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%;
+    }
+
+    .overlay img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+
+
+/* Pagination Container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+/* Default number style */
+.pagination span {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #4C8999;
+    transition: all 0.3s ease;
+    color: white;
+    background-color: transparent;
+}
+
+/* Active (current image) number style */
+.pagination span.active {
+    color: black;
+    background-color: #4C8999;
+}
+
+/* Arrow buttons */
+.pagination-arrow {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4C8999;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+}
+
+.pagination-arrow:hover {
+    color: #FFFFFF;
+    background: #4C8999;
 }
