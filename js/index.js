@@ -395,3 +395,56 @@ overlay.addEventListener("click", function (e) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// radiant.html
+const track = document.querySelector(".carousel-track");
+const images = document.querySelectorAll(".carousel-track img");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+
+let currentIndex = 0;
+const imageWidth = images[0].clientWidth;
+
+function updateCarousel() {
+    track.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+}
+
+nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateCarousel();
+});
+
+prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarousel();
+});
+
+
+
+// Ensure it resizes properly when the window resizes
+window.addEventListener("resize", () => {
+    updateCarousel();
+});

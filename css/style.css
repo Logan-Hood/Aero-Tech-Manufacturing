@@ -689,13 +689,14 @@ footer {
 }
 
 .title {
-    text-align: center;
+    text-align: left;
     background-color: #f5f5f5;
     margin-bottom: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 32px;
 }
 
 .title p {
@@ -1148,3 +1149,184 @@ footer {
         font-size: 12px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*radiant.html*/
+.radiant-page {
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+}
+
+.radiant-page h1, h2, h3 {
+    text-align: center;
+}
+
+.green {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.green div {
+    width: 70%;
+    font-size: 18px;
+}
+
+.quote-btn2 {
+    text-align: center;
+}
+
+.manual {
+    background-color: #f5f5f5;
+    padding: 32px;
+}
+
+.manual-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3x3 */
+    gap: 16px;
+    padding: 32px;
+    justify-content: center;
+}
+
+/* Medium Screens (2x8) */
+@media (max-width: 1024px) {
+    .manual-group {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* Small Screens (1x7) */
+@media (max-width: 768px) {
+    .manual-group {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
+    }
+}
+
+
+.manual-group div {
+    border: #000 solid;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #4C8999;
+    text-align: center;
+    display: flex; /* Centering content */
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove padding from div */
+    height: 60px; /* Adjust height if needed */
+}
+
+.manual-btn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px; /* Moves padding to anchor */
+    font-weight: bold;
+}
+
+.manual-group div:hover {
+    background-color: white;
+}
+
+.manual-group div:hover .manual-btn {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+.static-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    overflow: hidden;
+    padding-bottom: 32px;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 100%;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    z-index: 10;
+}
+
+#prev {
+    left: 50px;
+}
+
+#next {
+    right: 50px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
