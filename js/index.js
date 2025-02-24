@@ -159,11 +159,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".flip-card");
 
     cards.forEach(card => {
-        card.addEventListener("click", function () {
-            this.classList.toggle("flipped");
+        card.addEventListener("click", function (event) {
+            // Prevents the event from bubbling up or triggering unwanted behaviors
+            event.stopPropagation();
+
+            // Toggle the 'flipped' class
+            if (this.classList.contains("flipped")) {
+                this.classList.remove("flipped"); // Flip back
+            } else {
+                this.classList.add("flipped"); // Flip forward
+            }
         });
     });
 });
+
 
 
 
