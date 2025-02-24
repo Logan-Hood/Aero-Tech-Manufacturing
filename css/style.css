@@ -821,6 +821,7 @@ footer {
     text-align: center;
     width: 100%;
     background-color: #f5f5f5;
+    padding-bottom: 40px;
 }
 
 .equipment-section p {
@@ -828,6 +829,24 @@ footer {
     font-size: 18px;
     width: 70%;
 }
+
+.equipment-section a {
+    padding: 8px;
+    border: #000 solid;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.equipment-section a:hover {
+    background-color: #4C8999;
+    border: #4C8999 solid;
+    color: white;
+}
+
+
+
+
 
 /* Grid container */
 .dropdown-group {
