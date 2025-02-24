@@ -704,6 +704,10 @@ footer {
     max-width: 70%;
 }
 
+
+
+
+
 /* Flip Card Container */
 .flip-card {
     background-color: transparent;
@@ -805,12 +809,10 @@ footer {
 .equipment-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     background-color: #f5f5f5;
-
-
 }
 
 .equipment-section p {
@@ -819,42 +821,20 @@ footer {
     width: 70%;
 }
 
-
+/* Grid container */
 .dropdown-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3x3 */
+    gap: 16px;
+    padding: 32px 160px;
     justify-content: center;
-    padding-left: 160px;
-    padding-right: 160px;
-    padding-bottom: 32px;
-    padding-top: 32px;
 }
 
-@media screen and (max-width: 768px) {
-    .dropdown-group {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 16px;
-        padding-top: 16px;
-    }
-
-}
-
-.equipment-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
+/* Equipment item styles */
 .equipment {
     text-align: center;
-    width: 320px;
     background-color: #f5f5f5;
     color: #ffffff;
-    margin: 16px;
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
@@ -870,7 +850,7 @@ footer {
     padding: 10px;
 }
 
-
+/* Equipment content hidden by default */
 .equipment-content {
     max-height: 0;
     overflow: hidden;
@@ -881,6 +861,22 @@ footer {
     font-size: 18px;
 }
 
+/* Responsive grid layout */
+@media screen and (max-width: 1024px) {
+    .dropdown-group {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dropdown-group {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        padding: 8px;
+    }
+}
+
+
 
 
 
@@ -889,25 +885,61 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 40px 20px;
 }
 
+.markets h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
 .markets-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 50%;
-    gap: 64px
+    display: grid;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Default Layout: 1 Column (Mobile) */
+@media (max-width: 600px) {
+    .markets-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet Layout: 2 Columns */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .markets-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Layout: 3 Columns */
+@media (min-width: 1025px) {
+    .markets-group {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .market-item {
-    width: 250px;
-    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .market-item img {
-    height: 250px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
 }
+
+.market-item h3 {
+    margin-top: 12px;
+}
+
 
 
 /* Gallery Layout */
@@ -925,10 +957,6 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    padding-left: 160px;
-    padding-right: 160px;
-    padding-bottom: 32px;
-    padding-top: 32px;
 }
 
 .gallery-item {
@@ -939,7 +967,7 @@ footer {
 }
 
 .gallery-item img {
-    width: 100%;
+    width: 90%;
     height: 250px;
     object-fit: cover;
     border-radius: 5px;
@@ -1033,6 +1061,7 @@ footer {
     align-items: center;
     margin-top: 10px;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 /* Default number style */
@@ -1072,4 +1101,23 @@ footer {
 .pagination-arrow:hover {
     color: #FFFFFF;
     background: #4C8999;
+}
+
+/* Responsive Pagination */
+/* Medium screens (max 10 numbers) */
+@media (max-width: 1024px) {
+    .pagination span {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
+
+/* Small screens (max 5 numbers) */
+@media (max-width: 600px) {
+    .pagination span {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
 }

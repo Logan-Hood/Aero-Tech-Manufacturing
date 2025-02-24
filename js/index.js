@@ -256,72 +256,75 @@ const galleries = {
     ]
 };
 
-
-
-
 let currentCategory = "";
 let currentIndex = 0;
+let paginationStart = 0;
+
+// Maximum numbers displayed per screen size
+const maxNumbersLarge = 15;
+const maxNumbersMedium = 10;
+const maxNumbersSmall = 5;
+let maxVisibleNumbers = maxNumbersLarge;
+
+// Get DOM elements
 const overlay = document.getElementById("galleryOverlay");
 const overlayImage = document.getElementById("overlayImage");
 const paginationContainer = document.getElementById("pagination");
 
-
-
-
+// Open the gallery
 function openGallery(index, category) {
     currentCategory = category;
     currentIndex = index;
+    paginationStart = 0; // Reset pagination start when opening a new gallery
     overlay.style.display = "flex";
     updateGallery();
 }
 
-
-
-
+// Close the gallery
 function closeGallery() {
     overlay.style.display = "none";
 }
 
-
-
-
+// Show previous image
 function prevImage() {
     if (!currentCategory) return;
     currentIndex = (currentIndex - 1 + galleries[currentCategory].length) % galleries[currentCategory].length;
     updateGallery();
 }
 
-
-
-
+// Show next image
 function nextImage() {
     if (!currentCategory) return;
     currentIndex = (currentIndex + 1) % galleries[currentCategory].length;
     updateGallery();
 }
 
-
-
-
+// Update gallery image and pagination
 function updateGallery() {
     overlayImage.src = galleries[currentCategory][currentIndex];
     updatePagination();
 }
 
+// Dynamically update maxVisibleNumbers based on screen size
+function adjustPaginationSize() {
+    if (window.innerWidth <= 600) {
+        maxVisibleNumbers = maxNumbersSmall;
+    } else if (window.innerWidth <= 1024) {
+        maxVisibleNumbers = maxNumbersMedium;
+    } else {
+        maxVisibleNumbers = maxNumbersLarge;
+    }
+}
 
-
-
-const maxVisibleNumbers = 15; // Show only 15 numbers at a time
-let paginationStart = 0; // Keeps track of the first visible number
-
-
-
-
+// Update pagination
 function updatePagination() {
     paginationContainer.innerHTML = "";
+    adjustPaginationSize();
 
-
-
+    const totalImages = galleries[currentCategory].length;
+    
+    // Ensure paginationStart does not go out of bounds
+    paginationStart = Math.max(0, Math.min(paginationStart, totalImages - maxVisibleNumbers));
 
     // Left Arrow (if not at the beginning)
     if (paginationStart > 0) {
@@ -335,58 +338,51 @@ function updatePagination() {
         paginationContainer.appendChild(leftArrow);
     }
 
-
-
-
     // Page numbers (only show a subset)
-    const end = Math.min(galleries[currentCategory].length, paginationStart + maxVisibleNumbers);
+    const end = Math.min(totalImages, paginationStart + maxVisibleNumbers);
     for (let i = paginationStart; i < end; i++) {
         const number = document.createElement("span");
         number.textContent = i + 1;
         number.classList.add("pagination-number");
         if (i === currentIndex) number.classList.add("active");
 
-
-
-
         number.addEventListener("click", () => {
             currentIndex = i;
             updateGallery();
         });
 
-
-
-
         paginationContainer.appendChild(number);
     }
 
-
-
-
     // Right Arrow (if more numbers exist)
-    if (end < galleries[currentCategory].length) {
+    if (end < totalImages) {
         const rightArrow = document.createElement("span");
         rightArrow.textContent = "►";
         rightArrow.classList.add("pagination-arrow");
         rightArrow.addEventListener("click", () => {
-            paginationStart = Math.min(
-                galleries[currentCategory].length - maxVisibleNumbers,
-                paginationStart + maxVisibleNumbers
-            );
+            paginationStart = Math.min(totalImages - maxVisibleNumbers, paginationStart + maxVisibleNumbers);
             updatePagination();
         });
         paginationContainer.appendChild(rightArrow);
     }
 }
 
+// Listen for screen size changes and update pagination dynamically
+window.addEventListener("resize", updatePagination);
 
-
-
-
-
-
+// Initialize Pagination on Load
+updatePagination();
 
 // Close overlay when clicking outside the image
 overlay.addEventListener("click", function (e) {
     if (e.target === overlay) closeGallery();
 });
+
+
+
+
+
+
+
+
+
