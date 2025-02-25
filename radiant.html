@@ -135,7 +135,6 @@
     <section class="manual">
         <h2>O&M Manuals</h2>
         <section class="manual-group">
-            
             <div>
                 <a id="manual-btn" 
                 href="https://www.aerotechmfg.com/file/c3ec013e-8cd8-4d21-8627-020331ab1806" 
@@ -145,7 +144,6 @@
                     Engineering Manual
                 </a>
             </div>
-
             <div>
                 <a id="manual-btn" href="https://www.aerotechmfg.com/file/fe57c7bd-e088-47e4-8b8f-caf9eb2f4747" 
                 class="manual-btn"
@@ -154,7 +152,6 @@
                     Radiant Ceiling Systems
                 </a>
             </div>
-
         <div>
             <a id="manual-btn" href="https://www.aerotechmfg.com/file/fe57c7bd-e088-47e4-8b8f-caf9eb2f4747" 
             class="manual-btn"
@@ -163,7 +160,6 @@
                 Radiant Lay-In Formed Metal Panels
             </a>
         </div>
-
         <div>
             <a id="manual-btn" href="https://www.aerotechmfg.com/file/c94b2d5e-5a09-4be4-902d-97bef640ea6f" 
             class="manual-btn"
@@ -172,7 +168,6 @@
                 Radiant Snap-In Formed Metal Panels
             </a>
         </div>
-
         <div>
             <a id="manual-btn" href="https://www.aerotechmfg.com/File/67424993-faea-4b3a-81cc-84ebad3cd050" 
             class="manual-btn"
@@ -181,7 +176,6 @@
                 Radiant Linear Extruded Panels - Standard
             </a>
         </div>
-
         <div>
             <a id="manual-btn" href="https://www.aerotechmfg.com/File/842ff3c6-9638-468e-82c4-62c31ae1bcfb" 
             class="manual-btn"
@@ -190,7 +184,6 @@
                 Radiant Linear Panels - Low Pressure Drop
             </a>
         </div>
-
         <div>
             <a id="manual-btn" href="https://www.aerotechmfg.com/file/992a4207-a4c6-42e4-96ce-0f9901ee9bb8" 
             class="manual-btn"
@@ -204,20 +197,23 @@
 
     <section class="single-gallery">
         <h2>Gallery</h2>
-        <section class="static-gallery">
-        <div class="carousel">
-            <button id="prev" class="nav-button">&#10094;</button>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="images/radiant1.jpg" alt="Image 1">
-                    <img src="images/radiant2.jpg" alt="Image 2">
-                    <img src="images/radiant3.jpg" alt="Image 3">
-                </div>
-            </div>
-            <button id="next" class="nav-button">&#10095;</button>
+        <section class="gallery-group2">
+
+        <div class="gallery-item2" onclick="openGallery(0, 'radiant')">
+            <img src="images/radiant1.jpg" alt="Gallery Image">
         </div>
-    </section>
-    
+
+<!-- Overlay for Image Carousels -->
+    <div id="galleryOverlay" class="overlay">
+        <span class="close-btn" onclick="closeGallery()">&times;</span>
+        <div class="overlay-content">
+            <button class="prev-btn" onclick="prevImage()">&#10094;</button>
+            <img id="overlayImage" src="" alt="Gallery Image">
+            <button class="next-btn" onclick="nextImage()">&#10095;</button>
+            </div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+        </section>        
     </section>
     
 
