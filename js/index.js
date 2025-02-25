@@ -52,8 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         1: {
             title: "Precision Sheet Metal",
             image: "images/service 1.png",
-            description: `Precision Sheet Metal Fabrication
-            AERO TECH specializes in custom sheet-metal parts and assemblies, from access panels to Z-brackets. 
+            description: `AERO TECH specializes in custom sheet-metal parts and assemblies, from access panels to Z-brackets. 
             Our expert team ensures seamless project coordination from design to final production, meeting exact 
             customer specifications. With advanced fabrication methods, in-house finishing, and silk screening, 
             we set the industry standard for quality and precision.`,
@@ -62,16 +61,14 @@ document.addEventListener("DOMContentLoaded", function() {
         2: {
             title: "Radiant Ceiling Panels",
             image: "images/service 2.png",
-            description: `Radiant Ceiling Panels
-            AERO TECH manufactures and installs radiant ceiling panels for efficient, comfortable heating and cooling. 
+            description: `AERO TECH manufactures and installs radiant ceiling panels for efficient, comfortable heating and cooling. 
             Used in hospitals, schools, and offices, our LEED-recognized systems enhance sustainability in new and renovated buildings.`,
             link: "radiant.html"
         },
         3: {
             title: "Carpet Cleaning Mounts",
             image: "images/service 3.png",
-            description: `Carpet Cleaning Truck Mounts
-            AERO TECH designs and manufactures the industry’s most powerful, versatile and reliable PTO driven 
+            description: `AERO TECH designs and manufactures the industry’s most powerful, versatile and reliable PTO driven 
             surface cleaning truck mount on the market today. The XT is designed and manufactured entirely in house 
             in our 84,000 SQ FT facility with the help of our highly skilled team of employees to ensure the highest 
             level of quality at the most competitive cost.`,
@@ -425,6 +422,91 @@ overlay.addEventListener("click", function (e) {
 
 
 
-// radiant.html
+// carpet.html
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const trucks = {
+        1: {
+            title: "The XT Advantage",
+            video: "https://www.youtube.com/embed/yz5PlLJRRs4",
+            description: `The XT Cleaning Truck Mount outperforms the competition with 
+            rapid 7–10 minute heat-up, a maintenance-reducing PTO system, and true dual 
+            wand capability. With 660 ICFM @ 16" HG, 1650 RPM max speed, and superior 
+            airflow for faster drying, it delivers unmatched performance. Offering 290 
+            cubic feet of storage, 190 square feet of ad space, and expert-backed 
+            reliability, it’s built to ASME and TEMA standards—all at a competitive, 
+            manufacturer-direct price.`,
+            link: "xt.html"
+        },
+        2: {
+            title: "DDS - DIRECT DRIVE SYSTEM",
+            video: "https://www.youtube.com/embed/hlqVL_7_Abo&t=1s",
+            description: `Meet the Aero Tech stainless steel Direct Drive System 
+            (DDS).  Engineered from the ground up to deliver maximum heat and vacuum 
+            pressure for cleaner, dryer carpet.  The DDS is built to last longer, need 
+            less maintenance and repair, all while producing the best results for your 
+            customers`,
+            link: "dds.html"
+        },
+        3: {
+            title: "COMING SOON",
+            image: "rseries.png",
+            link: "rs.html"
+        }
+    };
+
+    const tabs = document.querySelectorAll(".truck-tab");
+    const truckImage = document.getElementById("truck-image");
+    const truckTitle = document.getElementById("truck-title");
+    const truckDescription = document.getElementById("truck-description");
+    const truckLink = document.getElementById("truck-link");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            const truckId = this.getAttribute("data-truck");
+
+            // Update Content
+            truckTitle.textContent = trucks[truckId].title;
+            truckImage.src = trucks[truckId].image;
+            truckDescription.textContent = trucks[truckId].description;
+            truckLink.href = trucks[truckId].link;
+
+            // Update Active Tab
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".review-track");
+    const reviews = document.querySelectorAll(".review");
+
+    // Clone the first few elements for an infinite effect
+    reviews.forEach(review => {
+        let clone = review.cloneNode(true);
+        track.appendChild(clone);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
