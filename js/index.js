@@ -264,7 +264,13 @@ const galleries = {
         "images/radiant1.jpg",
         "images/radiant2.jpg",
         "images/radiant3.jpg",
-        "images/radiant4.jpg"
+        "images/radiant4.jpg",
+    ],
+    "carpet": [
+        "images/carpet1.png",
+        "images/carpet2.png",
+        "images/carpet3.png",
+        "images/carpet4.png",
     ]
 };
 
